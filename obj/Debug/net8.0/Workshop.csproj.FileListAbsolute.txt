@@ -28,3 +28,4 @@ C:\Users\MacintoshPC\Documents\WorkshopProject\Workshop\obj\Debug\net8.0\refint\
 C:\Users\MacintoshPC\Documents\WorkshopProject\Workshop\obj\Debug\net8.0\Workshop.pdb
 C:\Users\MacintoshPC\Documents\WorkshopProject\Workshop\obj\Debug\net8.0\Workshop.genruntimeconfig.cache
 C:\Users\MacintoshPC\Documents\WorkshopProject\Workshop\obj\Debug\net8.0\ref\Workshop.dll
+C:\Users\MacintoshPC\Documents\WorkshopProject\Workshop\obj\Debug\net8.0\Workshop.sourcelink.json
