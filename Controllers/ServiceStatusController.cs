@@ -3,16 +3,16 @@ using System.Text.Encodings.Web;
 
 namespace MvcMovie.Controllers;
 
-public class ServiceStatus : Controller
+public class ServiceStatusController : Controller
 {
     // 
-    // GET: /HelloWorld/
+    // GET: /ServiceStatus/
     public string Index()
     {
-        return "This is my default action...";
+        return "This is my default action for ServiceStatusController...";
     }
     // 
-    // GET: /HelloWorld/Welcome/ 
+    // GET: /ServiceStatus/Welcome/ 
     public string Welcome()
     {
         return "This is the Welcome action method...";
