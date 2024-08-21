@@ -7,9 +7,9 @@ public class ClientController : Controller
 {
     // 
     // GET: /Client/
-    public string Index()
+    public IActionResult Index()
     {
-        return "This is my default action for ClientController...";
+        return View();
     }
     // 
     // GET: /Client/Welcome/ 
