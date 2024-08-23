@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Workshop.Data;
 
@@ -10,9 +11,11 @@ using Workshop.Data;
 namespace Workshop.Migrations
 {
     [DbContext(typeof(WorkshopContext))]
-    partial class WorkshopContextModelSnapshot : ModelSnapshot
+    [Migration("20240823225416_ServiceTypeMigration")]
+    partial class ServiceTypeMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
@@ -143,21 +146,6 @@ namespace Workshop.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("OrderStatus");
-                });
-
-            modelBuilder.Entity("Workshop.Models.ServiceStatus", b =>
-                {
-                    b.Property<Guid>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ServiceStatusName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("ServiceStatus");
                 });
 
             modelBuilder.Entity("Workshop.Models.ServiceTicket", b =>
