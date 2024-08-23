@@ -18,5 +18,6 @@ namespace Workshop.Data
         public DbSet<Workshop.Models.Car> Car { get; set; } = default!;
         public DbSet<Workshop.Models.ClientCar> ClientCar { get; set; } = default!;
         public DbSet<Workshop.Models.CarPart> CarPart { get; set; } = default!;
+        public DbSet<Workshop.Models.OrderStatus> OrderStatus { get; set; } = default!;
     }
 }
