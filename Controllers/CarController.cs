@@ -58,6 +58,13 @@ namespace Workshop.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Validation of LicensePlate. If it already exists, user will not go through
+                var existingCar = await _context.Car.FirstOrDefaultAsync(c => c.LicensePlate == car.LicensePlate);
+                if (existingCar != null)
+                {
+                    ModelState.AddModelError("LicensePlate", "A car with this license plate already exists.");
+                    return View(car);
+                }
                 car.ID = Guid.NewGuid();
                 _context.Add(car);
                 await _context.SaveChangesAsync();
