@@ -58,6 +58,13 @@ namespace Workshop.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Validation of PhoneNumber. If it already exists user will not go throught
+                var existingClient = await _context.Client.FirstOrDefaultAsync(c => c.PhoneNumber == client.PhoneNumber);
+                if (existingClient != null)
+                {
+                    ModelState.AddModelError("PhoneNumber", "A client with this phone number already exists.");
+                    return View(client);
+                }
                 client.ID = Guid.NewGuid();
                 _context.Add(client);
                 await _context.SaveChangesAsync();
