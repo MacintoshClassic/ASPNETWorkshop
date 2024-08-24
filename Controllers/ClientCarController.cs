@@ -58,6 +58,13 @@ namespace Workshop.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Validation of CarId. If it already exists in the table, user will not go through
+                var existingCarId = await _context.ClientCar.FirstOrDefaultAsync(c => c.CarId == clientCar.CarId);
+                if (existingCarId != null)
+                {
+                    ModelState.AddModelError("CarId", "A car with this id already exists.");
+                    return View(clientCar);
+                }
                 clientCar.ID = Guid.NewGuid();
                 _context.Add(clientCar);
                 await _context.SaveChangesAsync();
