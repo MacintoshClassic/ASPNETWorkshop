@@ -14,7 +14,7 @@ namespace Workshop.Models
         public string FullName { get; set; }
 
         [Required]
-        [Column(TypeName = "nvarchar(10)")]
+        [Column(TypeName = "nvarchar(15)")]
         [Phone]
         public string PhoneNumber { get; set; }
 

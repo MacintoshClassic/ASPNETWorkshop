@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Workshop.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<WorkshopContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("WorkshopContext") ?? throw new InvalidOperationException("Connection string 'WorkshopContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WorkshopContext") ?? throw new InvalidOperationException("Connection string 'WorkshopContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
