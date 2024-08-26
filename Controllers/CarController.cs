@@ -54,6 +54,9 @@ namespace Workshop.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+
+        // FOR REQUEST TESTS USE:
+        // public async Task<IActionResult> Create([FromBody] Car car)
         public async Task<IActionResult> Create([Bind("ID,Make,Model,Year,LicensePlate")] Car car)
         {
             if (ModelState.IsValid)
