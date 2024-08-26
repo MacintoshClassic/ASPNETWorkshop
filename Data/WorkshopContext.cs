@@ -24,5 +24,6 @@ namespace Workshop.Data
         public DbSet<Workshop.Models.ServiceType> ServiceType { get; set; } = default!;
         public DbSet<Workshop.Models.ServiceStatus> ServiceStatus { get; set; } = default!;
         public DbSet<Workshop.Models.RefueledCar> RefueledCar { get; set; } = default!;
+        public DbSet<Workshop.Models.ChargedCar> ChargedCar { get; set; } = default!;
     }
 }
