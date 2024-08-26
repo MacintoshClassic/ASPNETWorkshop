@@ -18,6 +18,14 @@ namespace Workshop.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd HH:mm}")]
         public DateTime dateTime { get; set; }
 
-        public float PriceTotal { get; set; }
+        public float PriceTotal
+        {
+            get
+            {
+                return (float)(Litres * 1.4);
+            }
+            // If I remove set {} -> the PriceTotal column will not show up in the database
+            set { }
+        }
     }
 }
