@@ -9,9 +9,9 @@ namespace Workshop.Models
         [Key]
         public Guid ID { get; set; }
 
-        // // based on ID from ServiceTicket table
-        // [Required]
-        // public Guid ServiceTicketId { get; set; }
+        // based on ID from ServiceTicket table
+        [Required]
+        public Guid ServiceTicketId { get; set; }
 
         // based on ID from CarPart table
         [Required]
@@ -20,8 +20,8 @@ namespace Workshop.Models
         [Required]
         public int CarPartQuantity { get; set; }
 
-        // [Required]
-        // public int HoursDedicated { get; set; }
+        [Required]
+        public int HoursDedicated { get; set; }
 
         public float PriceTotal
         {

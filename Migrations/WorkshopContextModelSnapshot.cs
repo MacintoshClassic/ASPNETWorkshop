@@ -34,8 +34,14 @@ namespace Workshop.Migrations
                     b.Property<int>("CarPartQuantity")
                         .HasColumnType("int");
 
+                    b.Property<int>("HoursDedicated")
+                        .HasColumnType("int");
+
                     b.Property<float>("PriceTotal")
                         .HasColumnType("real");
+
+                    b.Property<Guid>("ServiceTicketId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ID");
 

@@ -13,10 +13,16 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.ServiceTicketId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.CarPartId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CarPartQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoursDedicated)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PriceTotal)
@@ -29,10 +35,20 @@
         {
             <tr>
                 <td>
+                    @Html.ActionLink(item.ServiceTicketId.ToString(), "Details", "ServiceTicket", new
+                        {
+                            id =
+                             item.ServiceTicketId
+                        }, null)
+                </td>
+                <td>
                     @Html.ActionLink(item.CarPartId.ToString(), "Details", "CarPart", new { id = item.CarPartId }, null)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CarPartQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoursDedicated)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.PriceTotal)

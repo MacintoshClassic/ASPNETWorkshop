@@ -54,7 +54,7 @@ namespace Workshop.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,CarPartId,CarPartQuantity,PriceTotal")] CalculatedRepairCost calculatedRepairCost)
+        public async Task<IActionResult> Create([Bind("ID,ServiceTicketId,CarPartId,CarPartQuantity,HoursDedicated,PriceTotal")] CalculatedRepairCost calculatedRepairCost)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace Workshop.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("ID,CarPartId,CarPartQuantity,PriceTotal")] CalculatedRepairCost calculatedRepairCost)
+        public async Task<IActionResult> Edit(Guid id, [Bind("ID,ServiceTicketId,CarPartId,CarPartQuantity,HoursDedicated,PriceTotal")] CalculatedRepairCost calculatedRepairCost)
         {
             if (id != calculatedRepairCost.ID)
             {
