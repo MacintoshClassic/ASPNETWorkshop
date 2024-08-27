@@ -28,7 +28,7 @@ namespace Workshop.Models
             get
             {
                 // (PricePerUnit from CarPart table x Quantity from input) + (HourlyRate from MechanicId table x HoursDedicated from input)
-                return (float)(CarPartQuantity * 40);
+                return (float)((CarPartQuantity * 40) + (HoursDedicated * 100));
             }
             set { }
         }

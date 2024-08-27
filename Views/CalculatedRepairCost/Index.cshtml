@@ -40,9 +40,11 @@
                             id =
                              item.ServiceTicketId
                         }, null)
+                    @* @Html.DisplayFor(modelItem => item.ServiceTicketId) *@
                 </td>
                 <td>
                     @Html.ActionLink(item.CarPartId.ToString(), "Details", "CarPart", new { id = item.CarPartId }, null)
+                    @* @Html.DisplayFor(modelItem => item.CarPartId) *@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CarPartQuantity)

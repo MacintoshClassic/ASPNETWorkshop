@@ -27,9 +27,11 @@
             <tr>
                 <td>
                     @Html.ActionLink(item.ClientId.ToString(), "Details", "Client", new { id = item.ClientId }, null)
+                    @* @Html.DisplayFor(modelItem => item.ClientId) *@
                 </td>
                 <td>
                     @Html.ActionLink(item.CarId.ToString(), "Details", "Car", new { id = item.CarId }, null)
+                    @* @Html.DisplayFor(modelItem => item.CarId) *@
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

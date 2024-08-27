@@ -39,6 +39,7 @@
                 </td>
                 <td>
                     @Html.ActionLink(item.CarId.ToString(), "Details", "Car", new { id = item.CarId }, null)
+                    @* @Html.DisplayFor(modelItem => item.CarId) *@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.QuantityAvailable)
@@ -51,6 +52,7 @@
                         {
                             id = item.OrderStatusId
                         }, null)
+                    @* @Html.DisplayFor(modelItem => item.OrderStatusId) *@
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
