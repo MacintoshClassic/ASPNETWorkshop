@@ -16,7 +16,13 @@
                 @Html.DisplayNameFor(model => model.OrderStatusName)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.CarPartId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.QuantityOrdered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceTotal)
             </th>
             <th></th>
         </tr>
@@ -28,7 +34,13 @@
                 @Html.DisplayFor(modelItem => item.OrderStatusName)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.CarPartId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.QuantityOrdered)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceTotal)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
