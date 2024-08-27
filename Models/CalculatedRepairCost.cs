@@ -13,6 +13,10 @@ namespace Workshop.Models
         [Required]
         public Guid ServiceTicketId { get; set; }
 
+        // based on ID from Mechanic table
+        // [Required]
+        // public Guid Mechanicid { get; set; }
+
         // based on ID from CarPart table
         [Required]
         public Guid CarPartId { get; set; }
@@ -23,14 +27,6 @@ namespace Workshop.Models
         [Required]
         public int HoursDedicated { get; set; }
 
-        public float PriceTotal
-        {
-            get
-            {
-                // (Quantity from input * PricePerUnit from CarPart table) + (HoursDedicated from input * HourlyRate from MechanicId table)
-                return (CarPartQuantity * 40) + (HoursDedicated * 100);
-            }
-            set { }
-        }
+        public float PriceTotal { get; set; }
     }
 }
