@@ -54,10 +54,24 @@ namespace Workshop.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Mechanicid,CarPartId,CarPartQuantity,HoursDedicated,PriceTotal")] CalculatedRepairCost calculatedRepairCost)
+        public async Task<IActionResult> Create([Bind("ID,MechanicId,CarPartId,CarPartQuantity,HoursDedicated,PriceTotal")] CalculatedRepairCost calculatedRepairCost)
         {
+            // Fetching PricePerUnit from CarPart table based on CarPartId from the input field
+            var carPart = _context.CarPart.SingleOrDefault(cp => cp.ID == calculatedRepairCost.CarPartId);
+
+            // Fetching HourlyRate from Mechanic table based on MechanicId from the input field
+            var mechanic = _context.Mechanic.SingleOrDefault(m => m.ID == calculatedRepairCost.Mechanicid);
+
+            if (carPart == null)
+            {
+                ModelState.AddModelError("", "Car part not found");
+                return View(calculatedRepairCost);
+            }
+
             if (ModelState.IsValid)
             {
+                // Calculating the total price based on CarPartPrice and CarPartQuantity
+                calculatedRepairCost.PriceTotal = carPart.PricePerUnit * calculatedRepairCost.CarPartQuantity;
                 calculatedRepairCost.ID = Guid.NewGuid();
                 _context.Add(calculatedRepairCost);
                 await _context.SaveChangesAsync();
