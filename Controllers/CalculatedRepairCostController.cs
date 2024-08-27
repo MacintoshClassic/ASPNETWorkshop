@@ -68,10 +68,16 @@ namespace Workshop.Controllers
                 return View(calculatedRepairCost);
             }
 
+            if (mechanic == null)
+            {
+                ModelState.AddModelError("", "mechanic part not found");
+                return View(calculatedRepairCost);
+            }
+
             if (ModelState.IsValid)
             {
                 // Calculating the total price based on CarPartPrice and CarPartQuantity
-                calculatedRepairCost.PriceTotal = carPart.PricePerUnit * calculatedRepairCost.CarPartQuantity;
+                calculatedRepairCost.PriceTotal = carPart.PricePerUnit * calculatedRepairCost.CarPartQuantity + (mechanic.HourlyRate * calculatedRepairCost.HoursDedicated);
                 calculatedRepairCost.ID = Guid.NewGuid();
                 _context.Add(calculatedRepairCost);
                 await _context.SaveChangesAsync();
