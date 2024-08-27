@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Workshop.Migrations
 {
     /// <inheritdoc />
-    public partial class CalculatedRepairCost : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,7 @@ namespace Workshop.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ServiceTicketId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Mechanicid = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CarPartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CarPartQuantity = table.Column<int>(type: "int", nullable: false),
                     HoursDedicated = table.Column<int>(type: "int", nullable: false),

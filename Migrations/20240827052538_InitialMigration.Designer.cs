@@ -12,8 +12,8 @@ using Workshop.Data;
 namespace Workshop.Migrations
 {
     [DbContext(typeof(WorkshopContext))]
-    [Migration("20240827033458_CalculatedRepairCost1")]
-    partial class CalculatedRepairCost1
+    [Migration("20240827052538_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,11 +40,11 @@ namespace Workshop.Migrations
                     b.Property<int>("HoursDedicated")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("Mechanicid")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<float>("PriceTotal")
                         .HasColumnType("real");
-
-                    b.Property<Guid>("ServiceTicketId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ID");
 

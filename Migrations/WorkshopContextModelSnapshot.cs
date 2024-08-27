@@ -37,11 +37,11 @@ namespace Workshop.Migrations
                     b.Property<int>("HoursDedicated")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("Mechanicid")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<float>("PriceTotal")
                         .HasColumnType("real");
-
-                    b.Property<Guid>("ServiceTicketId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ID");
 

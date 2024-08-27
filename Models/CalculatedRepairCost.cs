@@ -9,13 +9,9 @@ namespace Workshop.Models
         [Key]
         public Guid ID { get; set; }
 
-        // based on ID from ServiceTicket table
-        [Required]
-        public Guid ServiceTicketId { get; set; }
-
         // based on ID from Mechanic table
-        // [Required]
-        // public Guid Mechanicid { get; set; }
+        [Required]
+        public Guid Mechanicid { get; set; }
 
         // based on ID from CarPart table
         [Required]
