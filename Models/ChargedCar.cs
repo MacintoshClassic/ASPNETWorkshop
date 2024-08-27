@@ -14,6 +14,7 @@ namespace Workshop.Models
         public string LicensePlate { get; set; }
 
         [Required]
+        [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         public float Kwh { get; set; }
 
         [Required]

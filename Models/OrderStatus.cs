@@ -17,7 +17,7 @@ namespace Workshop.Models
         public Guid CarPartId { get; set; }
 
         // value can be added only if value >= 0
-        [Range(0, int.MaxValue, ErrorMessage = "Value must be a positive number")]
+        [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         public int QuantityOrdered { get; set; }
 
         public float PriceTotal { get; set; }

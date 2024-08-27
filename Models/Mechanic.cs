@@ -19,6 +19,7 @@ namespace Workshop.Models
         public string PhoneNumber { get; set; }
 
         [Required]
+        [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         public float HourlyRate { get; set; }
 
 

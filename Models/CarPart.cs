@@ -14,7 +14,11 @@ namespace Workshop.Models
         public string CarPartName { get; set; }
 
         public Guid CarId { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         public int QuantityAvailable { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         public float PricePerUnit { get; set; }
         public Guid OrderStatusId { get; set; }
     }

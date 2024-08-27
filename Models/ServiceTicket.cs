@@ -12,6 +12,8 @@ namespace Workshop.Models
         public Guid MechanicId { get; set; }
         public Guid ServiceStatusId { get; set; }
         public Guid ServiceTypeId { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         public float PriceTotal { get; set; }
 
         [Required]

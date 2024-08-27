@@ -13,6 +13,7 @@ namespace Workshop.Models
         [Column(TypeName = "nvarchar(10)")]
         public string LicensePlate { get; set; }
 
+        [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         public float Litres { get; set; }
 
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd HH:mm}")]
