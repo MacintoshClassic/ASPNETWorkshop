@@ -60,7 +60,7 @@ namespace Workshop.Controllers
             var carPart = _context.CarPart.SingleOrDefault(cp => cp.ID == calculatedRepairCost.CarPartId);
 
             // Fetching HourlyRate from Mechanic table based on MechanicId from the input field
-            var mechanic = _context.Mechanic.SingleOrDefault(m => m.ID == calculatedRepairCost.Mechanicid);
+            var mechanic = _context.Mechanic.SingleOrDefault(m => m.ID == calculatedRepairCost.MechanicId);
 
             if (carPart == null)
             {

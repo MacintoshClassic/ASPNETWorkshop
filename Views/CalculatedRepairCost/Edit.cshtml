@@ -14,9 +14,9 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ID" />
             <div class="form-group">
-                <label asp-for="Mechanicid" class="control-label"></label>
-                <input asp-for="Mechanicid" class="form-control" />
-                <span asp-validation-for="Mechanicid" class="text-danger"></span>
+                <label asp-for="MechanicId" class="control-label"></label>
+                <input asp-for="MechanicId" class="form-control" />
+                <span asp-validation-for="MechanicId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CarPartId" class="control-label"></label>
@@ -50,5 +50,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

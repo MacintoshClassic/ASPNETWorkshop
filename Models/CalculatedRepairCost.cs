@@ -11,7 +11,7 @@ namespace Workshop.Models
 
         // based on ID from Mechanic table
         [Required]
-        public Guid Mechanicid { get; set; }
+        public Guid MechanicId { get; set; }
 
         // based on ID from CarPart table
         [Required]
