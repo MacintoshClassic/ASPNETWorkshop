@@ -56,8 +56,17 @@ namespace Workshop.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,OrderStatusName,CarPartId,QuantityOrdered,PriceTotal")] OrderStatus orderStatus)
         {
+            var carPart = _context.CarPart.SingleOrDefault(cp => cp.ID == orderStatus.CarPartId);
+
+            if (carPart == null)
+            {
+                ModelState.AddModelError("", "Car part not found");
+                return View(orderStatus);
+            }
+
             if (ModelState.IsValid)
             {
+                orderStatus.PriceTotal = orderStatus.QuantityOrdered * carPart.PricePerUnit;
                 orderStatus.ID = Guid.NewGuid();
                 _context.Add(orderStatus);
                 await _context.SaveChangesAsync();
