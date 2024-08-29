@@ -14,7 +14,7 @@ namespace Workshop.Models
         public Guid CarId { get; set; }
 
         [DisplayName("Mechanic ID")]
-        public Guid MechanicId { get; set; }
+        public Guid? MechanicId { get; set; }
 
         [DisplayName("Service status ID")]
         public Guid ServiceStatusId { get; set; }
@@ -24,7 +24,7 @@ namespace Workshop.Models
 
         [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         [DisplayName("Total Price")]
-        public float PriceTotal { get; set; }
+        public float? PriceTotal { get; set; }
 
         [Required]
         [Column(TypeName = "nvarchar(100)")]

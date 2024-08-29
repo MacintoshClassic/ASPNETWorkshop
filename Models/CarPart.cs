@@ -16,7 +16,7 @@ namespace Workshop.Models
         public string CarPartName { get; set; }
 
         [DisplayName("Car ID")]
-        public Guid CarId { get; set; }
+        public Guid? CarId { get; set; }
 
         [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         [DisplayName("Quantity available")]
