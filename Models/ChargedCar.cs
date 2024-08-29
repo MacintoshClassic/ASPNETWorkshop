@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,6 +12,7 @@ namespace Workshop.Models
 
         [Required]
         [Column(TypeName = "nvarchar(10)")]
+        [DisplayName("License plate")]
         public string LicensePlate { get; set; }
 
         [Required]
@@ -19,8 +21,10 @@ namespace Workshop.Models
 
         [Required]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd HH:mm}")]
+        [DisplayName("Date and time")]
         public DateTime dateTime { get; set; }
 
+        [DisplayName("Total price")]
         public float PriceTotal
         {
             get

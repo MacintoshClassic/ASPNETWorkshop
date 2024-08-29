@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace Workshop.Models
 
         [Required]
         [Column(TypeName = "nvarchar(10)")]
+        [DisplayName("License plate")]
         public string LicensePlate { get; set; }
     }
 }
