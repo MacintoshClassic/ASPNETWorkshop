@@ -35,10 +35,12 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.MechanicId)
+                    @* @Html.DisplayFor(modelItem => item.MechanicId) *@
+                    @Html.ActionLink(item.MechanicId.ToString(), "Details", "Mechanic", new { id = item.MechanicId }, null)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CarPartId)
+                    @* @Html.DisplayFor(modelItem => item.CarPartId) *@
+                    @Html.ActionLink(item.CarPartId.ToString(), "Details", "CarPart", new { id = item.CarPartId }, null)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CarPartQuantity)

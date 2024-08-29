@@ -10,28 +10,29 @@
     <h4>OrderStatus</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.OrderStatusName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OrderStatusName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CarPartId)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarPartId)
+        <dd class="col-sm-10">
+            @* @Html.DisplayFor(model => model.CarPartId) *@
+            @Html.ActionLink(@Model.CarPartId.ToString(), "Details", "CarPart", new { id = Model.CarPartId }, null)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.QuantityOrdered)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.QuantityOrdered)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.PriceTotal)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PriceTotal)
         </dd>
     </dl>
