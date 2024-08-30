@@ -27,6 +27,6 @@ namespace Workshop.Models
         public float PricePerUnit { get; set; }
 
         [DisplayName("Order status ID")]
-        public Guid OrderStatusId { get; set; }
+        public Guid? OrderStatusId { get; set; }
     }
 }
