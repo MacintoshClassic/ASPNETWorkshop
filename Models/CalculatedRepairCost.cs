@@ -22,10 +22,12 @@ namespace Workshop.Models
 
         [Required]
         [DisplayName("Car part quantity")]
+        [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         public int CarPartQuantity { get; set; }
 
         [Required]
         [DisplayName("Hours dedicated")]
+        [Range(0, int.MaxValue, ErrorMessage = "0 is a minimal value")]
         public int HoursDedicated { get; set; }
 
         [DisplayName("Price total")]
