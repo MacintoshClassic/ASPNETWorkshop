@@ -1,0 +1,44 @@
+@model IEnumerable<Workshop.Models.ClientCar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.ClientId.ToString(), "Details", "Client", new { id = item.ClientId }, null)
+                    @* @Html.DisplayFor(modelItem => item.ClientId) *@
+                </td>
+                <td>
+                    @Html.ActionLink(item.CarId.ToString(), "Details", "Car", new { id = item.CarId }, null)
+                    @* @Html.DisplayFor(modelItem => item.CarId) *@
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

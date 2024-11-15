@@ -1,0 +1,77 @@
+@model IEnumerable<Workshop.Models.ServiceTicket>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MechanicId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceStatusId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceTypeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @* @Html.DisplayFor(modelItem => item.CarId) *@
+                    @Html.ActionLink(item.CarId.ToString(), "Details", "Car", new { id = item.CarId }, null)
+                </td>
+                <td>
+                    @* @Html.DisplayFor(modelItem => item.MechanicId) *@
+                    @Html.ActionLink(item.MechanicId.ToString(), "Details", "Mechanic", new { id = item.MechanicId }, null)
+                </td>
+                <td>
+                    @* @Html.DisplayFor(modelItem => item.ServiceStatusId) *@
+                    @Html.ActionLink(item.ServiceStatusId.ToString(), "Details", "ServiceStatus", new
+                        {
+                            id =
+                             item.ServiceStatusId
+                        }, null)
+                </td>
+                <td>
+                    @* @Html.DisplayFor(modelItem => item.ServiceTypeId) *@
+                    @Html.ActionLink(item.ServiceTypeId.ToString(), "Details", "ServiceType", new
+                        {
+                            id = item.ServiceTypeId
+                        }, null)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaseDescription)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
